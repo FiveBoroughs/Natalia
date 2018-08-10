@@ -1,59 +1,85 @@
 
 # The username of your bot as set with the botfather
-NATALIA_BOT_USERNAME: "@My_Natalia_Bot"
+NATALIA_BOT_USERNAME: "@MyBot"
 
 # The bot token supplied by botfather 
-NATALIA_BOT_TOKEN: "my-botfather-token"
+NATALIA_BOT_TOKEN: "132465:MYBOTTOKEN"
 
 # The telegram Id of the bot owner
-BOT_OWNER_ID: 123456789
+BOT_OWNER_ID: 123456
 
 # Admin Telegram Ids
 ADMINS:
-  - 123456789  # my-telegram-user-id
+  - 132456  # my-telegram-user-id
 
 # Rooms for the bot to moderate (Name as first param!)
 ROOMS:
-  - name: 'MainRoom'
-    id: '-123456789'
+  - name: 'MyMainRoom'
+    id: '-123456'
     # Last message and uncompressed image
     prior_welcome_message_id: 0
     lastuncompressed_image_message_id: 0
     # Prefix to add when forwarding
-    forward_hashtag: '#MainRoom'
-    # Is this the room to post the top stickers stats ?
+    forward_hashtag: '#MyMainRoom'
+    # Is this the room to post the top stickers stats ? Only one room out of all can have this to 1
     is_top_stickers: 1
-    # Is this the room to post the top gif stats ?
+    # Is this the room to post the top gif stats ? Only one room out of all can have this to 1
     is_top_gifs: 1
+    # Is this th room to post the wordcloud in? Only one room out of all can have this to 1
+    is_wordcloud: 1
+    # Is this the room to post todays users in ? Only one room out of all can have this to 1
+    is_todaysusers: 1
+    # Is this a room to send promotets in ?
+    is_promotets: 1
+    # Is this a room to pin promotets in ?
+    is_promotets_pin: 1
     # Is this a room to log ?
     is_log: 1
     # Is this a room to greet new users in ?
     is_welcome: 1
     # Special welcome message (if any)
     special_welcome_message: ''
+    # Is this a room to countershill in ?
+    is_countershill: 1
     # Numbers of days a user should be restricted for when joining
     days_restriction_on_join: 14
-  - name: 'SecondRoom'
-    id: '-123456789'
+    # Admin room for this group (various messages to be sent there for admins)
+    admin_room_id: -132456
+    # Channel to forward to (links and hashtags)
+    forward_channel: -132456
+  - name: 'MySideRoom'
+    id: '-123456'
     # Last message and uncompressed image
     prior_welcome_message_id: 0
-    prior_join_message_id: 0
     lastuncompressed_image_message_id: 0
     # Prefix to add when forwarding
-    forward_hashtag: '#SecondRoom'
-    # Is this the room to post the top stickers stats ?
+    forward_hashtag: '#MySideRoom'
+    # Is this the room to post the top stickers stats ? Only one room out of all can have this to 1
     is_top_stickers: 0
-    # Is this the room to post the top gif stats ?
+    # Is this the room to post the top gif stats ? Only one room out of all can have this to 1
     is_top_gifs: 0
+    # Is this th room to post the wordcloud in? Only one room out of all can have this to 1
+    is_wordcloud: 0
+    # Is this the room to post todays users in ? Only one room out of all can have this to 1
+    is_todaysusers: 0
+    # Is this a room to send promotets in ?
+    is_promotets: 0
+    # Is this a room to pin promotets in ?
+    is_promotets_pin: 0
     # Is this a room to log ?
-    is_log: 0
+    is_log: 1
     # Is this a room to greet new users in ?
     is_welcome: 1
     # Special welcome message (if any)
     special_welcome_message: 'welcome_special'
+    # Is this a room to countershill in ?
+    is_countershill: 1
     # Numbers of days a user should be restricted for when joining
-    days_restriction_on_join: 366
-
+    days_restriction_on_join: 2
+    # Admin room for this group (various messages to be sent there for admins)
+    admin_room_id: -132456
+    # Channel to forward to (links and hashtags)
+    forward_channel: -132456
 
 # Stop words for wordcloud 
 WORDCLOUD_STOPWORDS: 
@@ -235,6 +261,54 @@ MESSAGES:
 
    /start - to go back to home
 
+  uncompressedImage: 
+    "%s, I deleted that pic you just posted because it is an uncompressed format, please use the ''compress'' format when posting pictures."
+
+  countershillReplyStart:
+    We do not allow users to post personal affiliate links.
+
+    This prevents many problems that can poison a community.
+    
+    Whalepool pays for all staff, servers, competitions and costs through affiliaite revenue, thus we ask users to support whalepool by using the community affiliate links instead.
+
+  countershillReplyCenter:
+    "\n\n{0} recommended {1}, to signup on {1} please use the following link {2}"
+
+  countershillAdminWarning:
+    User {0} from {1} posted a shill link
+
+  topstickersWarning:
+    Posting... sometimes this can cause the telegram api to 'time out' ? so won't complete posting but trying anyway..
+
+  topstickersStart:
+    Whalepool most popular 3 stickers in the last 3 days are...
+
+  topstickersCenter:
+    with {0} posts..
+
+  topstickersEnd:
+    message has been posted to {0}
+
+  topgifsStart:
+    Whalepool's most popular gif ever with {0} posts is...
+
+  topgifsEnd:
+    Message has been posted to {0}
+
+  topgifpostersStart:
+    I'm naming and shaming the top 5 gif posters in {0}
+
+  topgifpostersCenter:
+    "\n#{0} - {1} with {2} gifs"
+
+  topgifpostersEnd:
+    message has been posted to {0}
+
+  todayinWords:
+    Posted today in pictures to {0}
+    
+  todaysusers:
+    Posted today's users to {0}
 
   donate: > 
    If you would like to support Whalepool.io, please donate to:
