@@ -6,3 +6,5 @@ wordcloud
 pyyaml
 requests
 matplotlib
+pandas
+TA-Lib
